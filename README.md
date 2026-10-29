@@ -5,20 +5,21 @@
 ที่นี่คือแหล่งดาวน์โหลดทางการของโปรแกรม Audit Agent สำหรับทีมผู้แข่งขัน (RULES-TECH ข้อ 5.1.1a)
 ไฟล์ทั้งหมดอยู่ในหน้า **[Releases](../../releases)** — repo นี้มีเฉพาะไฟล์แจก ไม่มี source code
 
-## ดาวน์โหลด
+## ดาวน์โหลด — เวอร์ชันแข่ง 1.0.0
 
-เลือกตามเครื่องประมวลผลหลักของหุ่น:
+ใช้ Release **[v1.0.0](../../releases/tag/v1.0.0)** เท่านั้นในวันแข่ง · เลือกตามเครื่องประมวลผลหลักของหุ่น:
 
 | เครื่อง | ไฟล์ |
 |---|---|
-| Windows 10/11 (64-bit) | `arbiter-agent-DEMO-windows.zip` |
-| Linux x86_64 (Ubuntu 20.04 ขึ้นไป) | `arbiter-agent-DEMO-linux-x86_64.tar.gz` |
-| Jetson / Raspberry Pi (ARM) | ยังไม่รองรับ — แจ้งผู้จัดล่วงหน้า (RULES-TECH ข้อ 5.1.7) |
+| Windows 10/11 (64-bit) | `arbiter-agent-1.0.0-windows.zip` |
+| Linux x86_64 — PC / NUC (Ubuntu 20.04 ขึ้นไป) | `arbiter-agent-1.0.0-linux-x86_64.tar.gz` |
+| Raspberry Pi 5 / ARM64 (Ubuntu 24.04 ขึ้นไป) | `arbiter-agent-1.0.0-linux-aarch64.tar.gz` |
+| Jetson (JetPack) | ยังไม่รองรับ — แจ้งผู้จัดล่วงหน้า |
 
-คู่มือ: `ARBITER-Agent-DEMO-Manual-TH.pdf` · วิธีติดตั้งย่อ: `README-INSTALL-TH.txt`
+วิธีติดตั้งและคำสั่งปิดเครือข่าย: `README-INSTALL-TH.txt` (มีอยู่ในไฟล์ zip / tar.gz ด้วย)
 
-> **รุ่น DEMO ใช้แข่งไม่ได้** — สำหรับทดสอบบนเครื่องที่จะใช้แข่งและรายงานปัญหาก่อนวันแข่ง
-> ผู้จัดจะประกาศรุ่นแข่งจริงเป็น Release แยกในหน้านี้
+> **ห้ามเปลี่ยนชื่อไฟล์โปรแกรม** และห้ามแยก `organizer.pub` ออกจากโฟลเดอร์
+> รุ่น DEMO (Release `demo-2026-10-16`) ใช้แข่งไม่ได้ — ลบทิ้งได้
 
 ## ตรวจว่าไฟล์เป็นของผู้จัดและไม่ถูกแก้
 
@@ -29,20 +30,19 @@
 sha256sum -c SHA256SUMS.txt --ignore-missing
 
 # Windows (PowerShell)
-Get-FileHash .\arbiter-agent-DEMO-windows.zip -Algorithm SHA256
+Get-FileHash .\arbiter-agent-1.0.0-windows.zip -Algorithm SHA256
 ```
 
-**2) ตัวโปรแกรมเป็นของผู้จัด** — `manifest-DEMO-windows.json` / `manifest-DEMO-linux.json` คือรายการ hash ของตัวโปรแกรม
-ที่ผู้จัด **เซ็นด้วยกุญแจ Ed25519** (กุญแจตรวจลายเซ็น: `organizer-DEMO.verify.pub`)
+**2) ตัวโปรแกรมเป็นของผู้จัด** — `manifest-windows.json` / `manifest-linux-x86_64.json` / `manifest-linux-aarch64.json`
+คือรายการ hash ของตัวโปรแกรมที่ผู้จัด **เซ็นด้วยกุญแจ Ed25519** (กุญแจตรวจลายเซ็น: `organizer.verify.pub`)
 ชุดตรวจของกรรมการ (1-PRE-ARM / 2-COLLECT) ใช้ manifest นี้ตรวจโปรแกรมบนเครื่องของทีมก่อนและหลังแข่งทุกแมตช์ —
 โปรแกรมที่ถูกแก้แม้ 1 byte จะ hash ไม่ตรง และไม่มีใครสร้าง manifest ปลอมได้โดยไม่มีกุญแจเซ็นของผู้จัด
 
-> รุ่น DEMO เซ็นด้วยกุญแจ DEMO ซึ่งแยกจากกุญแจรุ่นแข่ง — ชุดตรวจของสนามจริงจะไม่ยอมรับรุ่น DEMO
 > ห้ามแก้ไข ดัดแปลง หรือรัน Agent จาก source ในสนาม (RULES-TECH ข้อ 5.1.1a, 5.1.3)
 
 ## รายงานปัญหา
 
-แจ้งผู้จัดพร้อม: รุ่นเครื่อง/บอร์ด · ระบบปฏิบัติการและเวอร์ชัน · ไฟล์ zip ที่โปรแกรมสร้างหลังซ้อม (มี `agent.log` อยู่ข้างใน)
+แจ้งผู้จัดพร้อม: รุ่นเครื่อง/บอร์ด · ระบบปฏิบัติการและเวอร์ชัน · รูปหน้าจอ · ไฟล์ `agent.log` ในโฟลเดอร์โปรแกรม
 
 ---
 
