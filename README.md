@@ -16,7 +16,7 @@
 | Raspberry Pi 5 / ARM64 (Ubuntu 24.04 ขึ้นไป) | `arbiter-agent-1.0.0-linux-aarch64.tar.gz` |
 | Jetson (JetPack) | ยังไม่รองรับ — แจ้งผู้จัดล่วงหน้า |
 
-วิธีติดตั้งและคำสั่งปิดเครือข่าย: `README-INSTALL-TH.txt` (มีอยู่ในไฟล์ zip / tar.gz ด้วย)
+คู่มือ: `ARBITER-Agent-1.0.0-Manual-TH.pdf` · ติดตั้งย่อและคำสั่งปิดเครือข่าย: `README-INSTALL-TH.txt` (มีอยู่ในไฟล์ zip / tar.gz ด้วย)
 
 > **ห้ามเปลี่ยนชื่อไฟล์โปรแกรม** และห้ามแยก `organizer.pub` ออกจากโฟลเดอร์
 > รุ่น DEMO (Release `demo-2026-10-16`) ใช้แข่งไม่ได้ — ลบทิ้งได้
