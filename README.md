@@ -5,15 +5,15 @@
 ที่นี่คือแหล่งดาวน์โหลดทางการของโปรแกรม Audit Agent สำหรับทีมผู้แข่งขัน (RULES-TECH ข้อ 5.1.1a)
 ไฟล์ทั้งหมดอยู่ในหน้า **[Releases](../../releases)** — repo นี้มีเฉพาะไฟล์แจก ไม่มี source code
 
-## ดาวน์โหลด — เวอร์ชันแข่ง 1.0.0
+## ดาวน์โหลด — เวอร์ชันแข่ง 1.0.1
 
-ใช้ Release **[v1.0.0](../../releases/tag/v1.0.0)** เท่านั้นในวันแข่ง · เลือกตามเครื่องประมวลผลหลักของหุ่น:
+ใช้ Release **[v1.0.1](../../releases/tag/v1.0.1)** (รองรับจอเล็ก 1024x600) — v1.0.0 ยังใช้แข่งได้ · เลือกตามเครื่องประมวลผลหลักของหุ่น:
 
 | เครื่อง | ไฟล์ |
 |---|---|
-| Windows 10/11 (64-bit) | `arbiter-agent-1.0.0-windows.zip` |
-| Linux x86_64 — PC / NUC (Ubuntu 20.04 ขึ้นไป) | `arbiter-agent-1.0.0-linux-x86_64.tar.gz` |
-| Raspberry Pi 5 / ARM64 (Ubuntu 24.04 ขึ้นไป) | `arbiter-agent-1.0.0-linux-aarch64.tar.gz` |
+| Windows 10/11 (64-bit) | `arbiter-agent-1.0.1-windows.zip` |
+| Linux x86_64 — PC / NUC (Ubuntu 20.04 ขึ้นไป) | `arbiter-agent-1.0.1-linux-x86_64.tar.gz` |
+| Raspberry Pi 4 / 5 — ARM64 (Ubuntu 24.04+ หรือ Raspberry Pi OS Trixie) | `arbiter-agent-1.0.1-linux-aarch64.tar.gz` |
 | Jetson (JetPack) | ยังไม่รองรับ — แจ้งผู้จัดล่วงหน้า |
 
 คู่มือ: `ARBITER-Agent-1.0.0-Manual-TH.pdf` · ติดตั้งย่อและคำสั่งปิดเครือข่าย: `README-INSTALL-TH.txt` (มีอยู่ในไฟล์ zip / tar.gz ด้วย)
@@ -30,7 +30,7 @@
 sha256sum -c SHA256SUMS.txt --ignore-missing
 
 # Windows (PowerShell)
-Get-FileHash .\arbiter-agent-1.0.0-windows.zip -Algorithm SHA256
+Get-FileHash .\arbiter-agent-1.0.1-windows.zip -Algorithm SHA256
 ```
 
 **2) ตัวโปรแกรมเป็นของผู้จัด** — `manifest-windows.json` / `manifest-linux-x86_64.json` / `manifest-linux-aarch64.json`
